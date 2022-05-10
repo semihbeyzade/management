@@ -1,16 +1,12 @@
-import React from "react";
 import Employee from "./Employee";
-import { useState } from "react";
+import { useContext } from "react";
+import { EmployeeContext } from "../contexts/EmployeeContext";
+
 
 const EmployeeList = () => {
 
- const [employees, setEmployees] = useState([
-      {id:1, name: 'Semih Örscelik', email: 'semih@mail.com', address: 'Mozart str.', phone: '(0171)3598741'},
-      {id:1, name: 'Sevde Örscelik', email: 'semih@mail.com', address: 'Mozart str.', phone: '(0171)3598741'},
-      {id:1, name: 'Misha Örscelik', email: 'semih@mail.com', address: 'Mozart str.', phone: '(0171)3598741'},
-      {id:1, name: 'Pera Örscelik', email: 'semih@mail.com', address: 'Mozart str.', phone: '(0171)3598741'},
-      {id:1, name: 'Deniz Örscelik', email: 'semih@mail.com', address: 'Mozart str.', phone: '(0171)3598741'}
-  ])
+  const {employees} = useContext(EmployeeContext)
+
 
   return (
     <div>
