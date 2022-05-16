@@ -14,7 +14,7 @@ const EmployeeContextProvider = (props) => {
         {id:uuidv4(), name: 'Deniz Örscelik', email: 'semih@mail.com', address: 'Mozart str.', phone: '(0171)3598741'}
     ])
 
-  
+   const sortedEmployees = employees.sort((a,b) => a.name.localeCompare(b.name))
 
     const addEmployee = (name, email, address, phone) => {
         setEmployees([...employees, {id:uuidv4(), name, email, address, phone}])
@@ -30,7 +30,7 @@ const EmployeeContextProvider = (props) => {
     
     
     return (
-        <EmployeeContext.Provider value={{employees, addEmployee, deleteEmployee, updateEmployee}} >
+        <EmployeeContext.Provider value={{sortedEmployees, addEmployee, deleteEmployee, updateEmployee}} >
            {props.children}
         </EmployeeContext.Provider>
     )
