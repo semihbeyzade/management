@@ -14,6 +14,8 @@ const EmployeeContextProvider = (props) => {
         {id:uuidv4(), name: 'Deniz Örscelik', email: 'semih@mail.com', address: 'Mozart str.', phone: '(0171)3598741'}
     ])
 
+  
+
     const addEmployee = (name, email, address, phone) => {
         setEmployees([...employees, {id:uuidv4(), name, email, address, phone}])
     }

@@ -7,7 +7,8 @@ import AddForm from "./AddForm";
 
 const EmployeeList = () => {
   const { employees } = useContext(EmployeeContext);
-
+/*   sort((a,b) => (a.name < b.name ? -1 : 1))
+ */
   const [show, setShow] = useState(false)
 
  const handleClose = () => setShow(false);
@@ -51,7 +52,7 @@ const EmployeeList = () => {
         </thead>
         <tbody>
          {
-           employees.map((employee) => (
+           employees.sort((a,b) => a.name.localeCompare(b.name)).map((employee) => (
              <tr key={employee.id} >
              <Employee  employee={employee} />
              </tr>
